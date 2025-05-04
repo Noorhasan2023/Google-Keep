@@ -56,7 +56,7 @@
 
                 &.nocolor {
                     border-color: #5f6368;
-                    background-image: url(/assets/images/svg/nocolor.svg);
+                    background-image: url(/Google-Keep/assets/images/svg/nocolor.svg);
                     background-repeat: no-repeat;
                     background-position: center;
                 }
@@ -83,7 +83,7 @@
 
                 &.noimage {
                     border-color: #5f6368;
-                    background-image: url(/assets/images/backgrounds/no-image.png) !important;
+                    background-image: url(/Google-Keep/assets/images/backgrounds/no-image.png) !important;
                     background-repeat: no-repeat;
                     background-position: center;
                 }
@@ -108,7 +108,7 @@
             align-items: center;
 
             .search-icon {
-                background-image: url(/assets/images/svg/search.svg);
+                background-image: url(/Google-Keep/assets/images/svg/search.svg);
                 background-size: 14px 18px;
                 height: 18px;
                 width: 18px;
@@ -148,7 +148,7 @@
                 padding: 5px 10px 3px;
 
                 .check-icon {
-                    background: url(/assets/images/svg/box.svg) no-repeat center;
+                    background: url(/Google-Keep/assets/images/svg/box.svg) no-repeat center;
                     background-size: 18px 18px !important;
                     height: 18px;
                     width: 18px;
@@ -157,7 +157,7 @@
                 }
 
                 .check-icon.done {
-                    background: url(/assets/images/svg/box-checked.svg) no-repeat center;
+                    background: url(/Google-Keep/assets/images/svg/box-checked.svg) no-repeat center;
                 }
 
                 .label-name {
