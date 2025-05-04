@@ -121,7 +121,7 @@
     left: 0;
     top: 0;
     transform: translate(-7px, -7px);
-    background-image: url(./assets/images/svg/check2.svg);
+    background-image: url(/assets/images/svg/check2.svg);
 
     &:hover {
       cursor: pointer;
@@ -147,7 +147,7 @@
     width: 120px;
     margin: 20px;
     opacity: 0.1;
-    background-image: url(./assets/images/svg/no-notes.svg);
+    background-image: url(/assets/images/svg/no-notes.svg);
   }
 
   .text {
