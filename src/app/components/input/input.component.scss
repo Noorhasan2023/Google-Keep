@@ -157,3 +157,23 @@
     background-color: rgba(154, 160, 166, 0.039);
   }
 }
+.mic-btn {
+  margin-right: 47px;
+  width: 35px;
+  height: 35px;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  font-size: 18px;
+  user-select: none;
+
+  &.listening {
+    background-color: #ff5252;
+    color: white;
+    box-shadow: 0 0 10px 2px #ff5252;
+  }
+}

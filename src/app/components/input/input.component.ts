@@ -51,6 +51,8 @@ export class InputComponent implements OnInit {
       value: 'Show checkboxes'
     },
   }
+  recognition: any;
+  isListening = false;
   //? placeholder  --------------------------------------------------
 
   toggleNoteVisibility(condition: boolean) {
@@ -98,6 +100,9 @@ export class InputComponent implements OnInit {
     this.toggleNoteVisibility(false)
     document.removeEventListener('mousedown', this.mouseDownEvent)
     this.reset()
+    if(this.isListening){
+      this.toggleListening();
+    }
   }
 
   //? note  -----------------------------------------------------
@@ -289,7 +294,47 @@ export class InputComponent implements OnInit {
     if (type.body != undefined) this.inputLength.next({ ...this.inputLength.value, body: type.body })
   }
 
-
+  // Start listening for speech when button is clicked
+  toggleListening() {
+    if (!this.recognition) return;
+    if (this.isListening) {
+      this.recognition.stop();
+      this.isListening = false;
+    } else {
+      this.recognition.start();
+      this.isListening = true;
+    }
+  }
+  setCursorToEnd(el: HTMLElement) {
+    if (!el) return;
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.selectNodeContents(el);
+    range.collapse(false); // Move to the end
+    if (selection) {
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+    el.focus();
+  }
+  
+  // Insert speech text at the cursor position
+  insertText(text: string) {
+    if (this.noteBody && this.noteBody.nativeElement) {
+      const noteBodyElement = this.noteBody.nativeElement;
+      if(noteBodyElement.textContent && noteBodyElement.textContent.trim()){
+        noteBodyElement.textContent += " " + text;
+      }else{
+        noteBodyElement.textContent = text;
+      }
+    this.setCursorToEnd(this.noteBody?.nativeElement);
+    //Dispatch manual input event
+    const event = new Event('input', { bubbles: true });
+    noteBodyElement.dispatchEvent(event);
+    //Optionally update input length if needed (still useful)
+    this.updateInputLength({ body: noteBodyElement.innerHTML.length });
+    }
+  }
   //? -----------------------------------------------------------
 
   saveNoteSubscription?: Subscription
@@ -315,7 +360,35 @@ export class InputComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    // Initialize the SpeechRecognition API
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      this.recognition = new SpeechRecognition();
+      this.recognition.lang = 'en-US';  // Change to 'hi-IN' for Hindi
+      this.recognition.continuous = true;
+      this.recognition.interimResults = false;
+
+      this.recognition.onresult = (event: any) => {
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          const result = event.results[i];
+          if (result.isFinal) {
+            const transcript = result[0].transcript;
+            this.insertText(transcript);
+          }
+        }
+      };
+      this.recognition.onend = () => {// Auto-reset listening flag when stopped by browser
+        this.isListening = false;
+      };
+      this.recognition.onerror = (event: any) => {
+        console.error('Speech recognition error:', event.error);
+        this.isListening = false;
+      };
+    } else {
+      alert('Speech Recognition API is not supported in this browser.');
+    }
+  }
 
   ngOnDestroy() { this.saveNoteSubscription?.unsubscribe() }
 

@@ -46,6 +46,12 @@
                 <div class="undo disabled pop" data-pop="Undo"></div>
                 <div class="undo r disabled"></div>
             </div>
+            <div class="mic-btn" 
+                [class.listening]="isListening" 
+                (click)="toggleListening()"
+                title="Dictate">
+                🎤
+            </div>
             <div class="close-btn" (click)="saveNote()"> Close </div>
         </div>
         <!--? icons if trashed -->
@@ -64,8 +70,12 @@
 <!--* note template -->
 <ng-template #noteTemplate>
     <div [hidden]="noteBody.innerHTML.length" class="note-body ph">Take a note…</div>
-    <div #noteBody (input)="updateInputLength({body:noteBody.innerHTML.length})" (paste)="pasteEvent($event)"
-        class="note-body" contenteditable="true" spellcheck="true">
+    <div #noteBody 
+            (input)="updateInputLength({body:noteBody.innerHTML.length})" 
+            (paste)="pasteEvent($event)"
+            class="note-body" 
+            contenteditable="true" 
+            spellcheck="true">
     </div>
 </ng-template>
 <!--* cboxes template -->
