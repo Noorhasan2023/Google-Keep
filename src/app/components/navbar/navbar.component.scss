@@ -125,22 +125,22 @@
 
         .refresh {
           @extend %icons;
-          background-image: url(/assets/images/svg/refresh.svg);
+          background-image: url(assets/images/svg/refresh.svg);
         }
 
         .view {
           @extend %icons;
-          background-image: url(/assets/images/svg/view.svg);
+          background-image: url(assets/images/svg/view.svg);
         }
 
         .settings {
           @extend %icons;
-          background-image: url(/assets/images/svg/settings.svg);
+          background-image: url(assets/images/svg/settings.svg);
         }
 
         .search {
           @extend %icons;
-          background-image: url(/assets/images/svg/search.svg);
+          background-image: url(assets/images/svg/search.svg);
           opacity: 1 !important;
           display: none;
 
@@ -165,7 +165,7 @@
 
       .apps {
         @extend %icons;
-        background-image: url(/assets/images/svg/apps.svg);
+        background-image: url(assets/images/svg/apps.svg);
         position: relative;
         right: 2px;
       }

@@ -144,7 +144,7 @@
   }
 
   .cancel-icon {
-    background-image: url(/assets/images/svg/cancel.svg) !important;
+    background-image: url(assets/images/svg/cancel.svg) !important;
     @extend %icons
   }
 
@@ -178,13 +178,13 @@
       height: 45px;
 
       .plus-icon {
-        background-image: url(/assets/images/svg/plus.svg);
+        background-image: url(assets/images/svg/plus.svg);
         @extend %icons
       }
 
       .check-icon {
         @extend %icons;
-        background-image: url(/assets/images/svg/check3.svg);
+        background-image: url(assets/images/svg/check3.svg);
       }
     }
 
@@ -192,26 +192,26 @@
       @extend .input-container;
 
       .label-icon {
-        background-image: url(/assets/images/svg/label-filled.svg);
+        background-image: url(assets/images/svg/label-filled.svg);
         @extend %icons
       }
 
       .pen-icon {
-        background-image: url(/assets/images/svg/pen-filled.svg);
+        background-image: url(assets/images/svg/pen-filled.svg);
         @extend %icons
       }
 
       .trash-icon {
-        background-image: url(/assets/images/svg/trash-filled.svg);
+        background-image: url(assets/images/svg/trash-filled.svg);
         @extend %icons
       }
 
       input:focus+.pen-icon {
-        background-image: url(/assets/images/svg/check3.svg);
+        background-image: url(assets/images/svg/check3.svg);
       }
 
       .label-icon:hover {
-        background-image: url(/assets/images/svg/trash-filled.svg);
+        background-image: url(assets/images/svg/trash-filled.svg);
       }
     }
 
