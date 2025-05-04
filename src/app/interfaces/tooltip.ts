@@ -14,11 +14,11 @@ export enum bgColors {
 }
 export enum bgImages {
     i0 = '',
-    i1 = 'assets/images/backgrounds/image-1.svg',
-    i2 = 'assets/images/backgrounds/image-2.svg',
-    i3 = 'assets/images/backgrounds/image-3.svg',
-    i4 = 'assets/images/backgrounds/image-4.svg',
-    i5 = 'assets/images/backgrounds/image-5.svg',
+    i1 = './assets/images/backgrounds/image-1.svg',
+    i2 = './assets/images/backgrounds/image-2.svg',
+    i3 = './assets/images/backgrounds/image-3.svg',
+    i4 = './assets/images/backgrounds/image-4.svg',
+    i5 = './assets/images/backgrounds/image-5.svg',
 }
 
 

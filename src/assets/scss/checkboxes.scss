@@ -132,12 +132,12 @@
 .cbox-icon {
   cursor: pointer;
   @extend %ic;
-  background: url(assets/images/svg/box.svg) no-repeat center;
+  background: url(./assets/images/svg/box.svg) no-repeat center;
   width: 21px;
   height: 18px;
 
   &.done {
-    background-image: url(assets/images/svg/box-checked.svg) !important;
+    background-image: url(./assets/images/svg/box-checked.svg) !important;
   }
 
   &:hover {
@@ -146,13 +146,13 @@
 }
 
 .cbox-plus-icon {
-  background: url(assets/images/svg/plus.svg) no-repeat center;
+  background: url(./assets/images/svg/plus.svg) no-repeat center;
   padding: 8px;
   @extend %ic;
 }
 
 .cbox-cancel-icon {
-  background: url(assets/images/svg/cancel.svg) no-repeat center;
+  background: url(./assets/images/svg/cancel.svg) no-repeat center;
   padding: 13px;
   margin-right: 4px;
   visibility: hidden;
@@ -171,7 +171,7 @@
 
 
 .cbox-move-icon {
-  background: url(assets/images/svg/move.svg) no-repeat center;
+  background: url(./assets/images/svg/move.svg) no-repeat center;
   cursor: move;
   height: 24px;
   width: 24px;
@@ -181,7 +181,7 @@
 }
 
 .cbox-arrow {
-  background: url(assets/images/svg/arrow.svg) no-repeat center;
+  background: url(./assets/images/svg/arrow.svg) no-repeat center;
   height: 24px;
   width: 24px;
   opacity: 0.54;

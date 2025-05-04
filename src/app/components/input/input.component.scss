@@ -56,19 +56,19 @@
 
   .check {
     @extend %icons;
-    background-image: url(assets/images/svg/check.svg);
+    background-image: url(./assets/images/svg/check.svg);
     right: 121px;
   }
 
   .paint {
     @extend %icons;
-    background-image: url(assets/images/svg/paint.svg);
+    background-image: url(./assets/images/svg/paint.svg);
     right: 67px;
   }
 
   .picture {
     @extend %icons;
-    background-image: url(assets/images/svg/picture.svg);
+    background-image: url(./assets/images/svg/picture.svg);
     right: 13px;
   }
 }
